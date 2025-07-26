@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "reloader"
+version = "0.1.0"
+description = "Simple auto-reloader for development: executes commands and restarts them when files are modified. "
+readme = "README.md"
+maintainers=[{ name = "Özgür Altunyurt" }]
+requires-python = ">=3.11"
+dependencies = [
+    "asyncinotify>=4.2.1",
+    "click>=8.2.1",
+]
+
+[project.scripts]
+reloader = "reloader.main:main"
+
+[dependency-groups]
+dev = [
+    "ipdb>=0.13.13",
+    "ipython>=9.4.0",
+    "python-lsp-ruff>=2.2.2",
+    "python-lsp-server>=1.13.0",
+    "ruff>=0.12.5",
+    "ty>=0.0.1a16",
+]
